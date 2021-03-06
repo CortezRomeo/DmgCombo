@@ -1,0 +1,70 @@
+# DmgCombo 
+# Được viết bởi Cortez Romeo
+# Chia sẻ miễn phí tại minecraftvn.net
+
+# ------------
+# Đừng nên thay đỏi dòng này!
+config-version: 1.2
+
+# Thời gian giới hạn cho 1 lần combo
+# Để là 3 cho đúng với thời gian mà actionBar vừa tắt
+time: 3
+
+# Tối đa số thập phân có thể hiển thị sau dấu phẩy
+# VD: 1.00
+# Nên để formatDamage là 2
+formatDamage: 2
+
+# Nếu người chơi có số dmg combo bé hơn số dmg quy định
+# trong phần color thì phần <color> dưới phần message
+# sẽ đổi thành màu mà phần color đó quy định
+color:
+# Bạn có thể thêm hoặc bớt
+  color1:
+    dmg: 10
+    return: "&a"
+  color2:
+    dmg: 15
+    return: "&6"
+  color3:
+    dmg: 30
+    return: "&d"  
+  blablabla:
+    dmg: 5000
+    return: "&b"
+        
+end:
+  # Xem list âm thanh tại: 
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  endTime:
+    enableSound: true
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    message:
+    - "&fTổng DMG trong lần combo này:"
+    - "        <color>%dmg%"        
+  targetDeath:
+    enableSound: true
+    sound: ENTITY_VILLAGER_DEATH
+    message:
+    - "&fBạn vừa kết liễu &e%target% &fvới tổng sát thương là: <color>%dmg%"
+    actionBarEnable: true
+    actionBar: "&c&l%target% đã chết! &f(<color>%dmg% &e&lDMG&f)" 
+  targetDeathMOB:
+    enableSound: true
+    sound: ENTITY_GUARDIAN_DEATH
+    # Sử dụng %mobName% để lấy tên quái vật
+    # Sử dụng %mobDisplayName% để lấy tên custom của quái vật
+    # Lưu ý: Nếu quái không có tên custom, tự động chuyển thành tên quái
+    message:
+    - "&fBạn vừa kết liễu %mobDisplayName% &fvới tổng sát thương là: <color>%dmg%"
+    actionBarEnable: true
+    actionBar: "%mobDisplayName% &c&lđã chết! &f(<color>%dmg% &e&lDMG&f)"     
+        
+actionBar:
+  # Nếu không thích màu mè, bạn có thể xóa <color>
+  noCombo: '<color>%dmg%'
+  Combo: '<color>%dmg% &e&lCOMBO!'
+togcombo:
+  enable: "&aBạn vừa bật hiển thị combo"
+  disable: "&cBạn vừa tắt hiển thị combo"  
+no-permission: "&cBạn không có quyền"

@@ -1,0 +1,9 @@
+name: DmgCombo
+version: 1.2
+main: me.Cortez.Main
+author: CortezRomeo
+commands:
+  comboreload:
+    description: Reload
+  togcombo:
+    description: Tog combo
